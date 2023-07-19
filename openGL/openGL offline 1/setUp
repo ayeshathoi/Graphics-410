@@ -1,0 +1,19 @@
+Run the following commands to install OpenGL.
+$ sudo apt-get update
+$ sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
+Now to test if OpenGL libraries are working fine on our Linux, download the following C++ Program:
+https://drive.google.com/file/d/1nnXkTwAaOncFi0sanhdhPDxeu0FaLnKk/view?usp=sharing
+Now give the command below to compile the code.
+$ g++ main.cpp -o demo -lglut -lGLU -lGL
+Now run the OpenGL program with the following command.
+$ ./demo
+
+
+
+
+
+
+"-lfreeglut",
+                "-lglew32",
+                "-lopengl32",
+                "-lglu32"
