@@ -14,10 +14,8 @@ Implementation of Raster based graphics pipeline.
 - `Stage 3:` projection transformation
 - `Stage 4:` clipping & scan conversion using Z-buffer algorithm
 
-A demo of the input can be found in `Test Cases` folder.
-
-The output is given below <br/>
-![alt text](https://github.com/ayeshathoi/Graphics-410/blob/main/Rasterization/Test%20Cases%20(Updated%202%20Aug)/5/out.bmp)
+A demo of the input can be found in `Test Cases` folder. There are 5 testcases, from which one of the output is given below <br/>
+![alt text](https://github.com/ayeshathoi/Graphics-410/blob/main/Rasterization/Test%20Cases%20(Updated%202%20Aug)/3/out.bmp)
 
 
 
@@ -32,10 +30,12 @@ This project implements the following :
 - **Texture** : Texture can be added in the floor pressing "space" button. Otherwise, floor will be without texture in the snapshot.
 
 ---
-<p align=center>
+<p align=center">
 <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/without_tex.bmp" 
   height="220px" width="40%" alt="with Texture"/>
+</p>
 <hr/>
+<p align="center">
 <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/withtex.bmp" 
   height="220px" width="40%" alt="without Texture"/>
 </p>
