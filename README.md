@@ -33,7 +33,7 @@ The project implements the following :
 
 ---
 
-## **`Offline2` : Raster based Graphics pipeline**
+## **`Offline2 : Raster based Graphics pipeline`**
 Implementation of Raster based graphics pipeline.
 - `Stage 1:` modeling transformation
 - `Stage 2:` view transformation
@@ -48,14 +48,13 @@ A demo of the input can be found in `Test Cases` folder. There are 5 testcases, 
 
 ---
 
-## **`Offline3` : Implementation-of-Ray-Tracing**
-
----
+## **`Offline3 : Implementation-of-Ray-Tracing`**
 
 <p align="center">
 <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/withtex.bmp" height="50%" width="50%" alt="ray tracing" />
 </p>
 
+---
 
 This project implements the following :
 
