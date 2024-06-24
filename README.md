@@ -1,5 +1,9 @@
 # **`Computer-Graphics`**
 
+### Language & Library Used
+- `CPP`, `OpenGL`
+  
+---
 
 ## ***`Offline1 : OpenGL`*** 
 The project implements the following :
@@ -32,6 +36,8 @@ A demo of the input can be found in `Test Cases` folder. There are 5 testcases, 
 
 ## **`Implementation-of-Ray-Tracing`**
 
+<img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/withtex.bmp" height="400px" width="60%" alt="with Texture"/>
+---
 This project implements the following :
 - **A fully controllable camera :** camera moves in all directions by pressing different keys.
 - **Creates plane and shapes of different structure**: takes input from a file and draws spheres, triangle, quadric surface, Pyramids and a floor(2d plane).
@@ -46,16 +52,6 @@ This project implements the following :
             <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/without_tex.bmp" 
                  height="400px" width="60%" alt="without Texture">
         </div>
-        <hr/>
-        <div class="image">
-            <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/withtex.bmp" 
-                 height="400px" width="60%" alt="with Texture">
-        </div>
 </div>
 
----
-
-### Language & Library Used
-- `CPP`, `OpenGL`
-  
 
