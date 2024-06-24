@@ -21,13 +21,15 @@ The project implements the following :
 
 ### Online
 - Cube motion in a floor (Cube1.gif)
-<img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/online1/cube1.gif"
-  height="400px" width="40%" alt="cube">
 - Sphere motion in a floor (Sphere1.gif)
-<img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/online1/sphere1.gif"
-  height="400px" width="40%" alt="cube">
 - Half Octahedron (half-oct.gif)
 
+<p align=center">
+  <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/online1/cube1.gif"
+  height="400px" width="40%" alt="clock">
+  <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/online1/sphere1.gif"
+  height="400px" width="40%" alt="sphere octahedron">
+</p>
 
 ---
 
