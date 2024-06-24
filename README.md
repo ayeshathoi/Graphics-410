@@ -1,9 +1,11 @@
 # **`Computer-Graphics`**
 
+
+### ***OpenGL Offline*** 
 The project implements the following :
 - Analog Clock
-- Sphere to/ From Octahedron 
-![alt text](https://www.youtube.com/watch?v=nc07fEKwIBI)
+- Sphere to/ From Octahedron
+  - Video Demonstration : [Youtube Link](https://www.youtube.com/watch?v=nc07fEKwIBI)
 
 # `Offline2`
 Implementation of Raster based graphics pipeline.
@@ -30,8 +32,14 @@ This project implements the following :
 - **Texture** : Texture can be added in the floor pressing "space" button. Otherwise, floor will be without texture in the snapshot.
 
 ---
-- ![without texture](https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/without_tex.bmp)
-- ![with texture](https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/withtex.bmp)
+<p align=center>
+<img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/without_tex.bmp" 
+  height="220px" width="40%" alt="with Texture"/>
+<hr/>
+<img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/withtex.bmp" 
+  height="220px" width="40%" alt="without Texture"/>
+</p>
+
 ### Language & Library Used
 - `CPP`, `OpenGL`
   
