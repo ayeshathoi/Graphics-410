@@ -17,7 +17,7 @@ The project implements the following :
   <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/openGL%20offline%201/octahedron.gif"
   height="400px" width="40%" alt="sphere octahedron">
 </p>
----
+
 
 ### Online
 - Cube motion in a floor (Cube1.gif)
