@@ -5,6 +5,8 @@
 #include "Util.h"
 using namespace std;
 
+Point camera_pos, l, r, u;
+string object_type;
 void drawAxes()
 {
     if (draw_axes == 0)
@@ -58,6 +60,7 @@ void input()
             {
                 input_from_description >> cube->light_coefficients[i];
             }
+            
             input_from_description >> cube->shine;
             objects.push_back(cube);
         }
@@ -86,6 +89,7 @@ void input()
             {
                 input_from_description >> pyramid->light_coefficients[i];
             }
+            //cout << pyramid->light_coefficients[2] << endl;
             input_from_description >> pyramid->shine;
             objects.push_back(pyramid);
         }
@@ -115,6 +119,7 @@ void input()
         sl->spot_light_direction.Normalize();
         spot_lights.push_back(sl);
     }
+    cout << "Done Taking input" << endl;
     input_from_description.close();
 }
 
@@ -144,7 +149,7 @@ void init()
 {
     //init pos
     camera_pos = {0,-200,50};
-    l.x   = -camera_pos.x , l.y   = -camera_pos.y , l.z   = -camera_pos.z;
+    l = {0,1,0};
     u = {0,0,1};
     r = {1,0,0};
     u.Normalize();
@@ -179,7 +184,7 @@ Object* getNearest(Ray ray){
 
 Color getRayColor(int recursion_level, Ray ray)
 {
-    if(recursion_level == 0)
+    if(recursion_level < 0)
     {
         return {0,0,0};
     }
@@ -195,8 +200,8 @@ Color getRayColor(int recursion_level, Ray ray)
         return {0,0,0};
     }
     Point intersection_point = Addition(ray.start_point, Scalar_Multiplication(t, ray.direction));
-    Color color = {0,0,0};
-    color = Addition(color, Scalar_Multiplication(nearest_object->light_coefficients[0], nearest_object->getColor(intersection_point)));
+
+
     Point normal = nearest_object->getNormal(intersection_point, ray);
     normal.Normalize();
     Point reflected_ray_direction = Substraction(ray.direction, Scalar_Multiplication(2 * DotProduct(ray.direction, normal), normal));
@@ -257,6 +262,8 @@ Color getRayColor(int recursion_level, Ray ray)
 
         }
     }
+    Color color = {0,0,0};
+    color = Addition(color, Scalar_Multiplication(nearest_object->light_coefficients[0], nearest_object->getColor(intersection_point)));
     Color temp = color;
     color = Addition(color, Scalar_Multiplication(nearest_object->light_coefficients[1] * lambert,  nearest_object->getColor(intersection_point)));
     color = Addition(color, Scalar_Multiplication(nearest_object->light_coefficients[2] * phong,  nearest_object->getColor(intersection_point)));
@@ -298,6 +305,8 @@ void capture()
         }
     }
 
+    cout << "Point buffer generation done" << endl;
+
     Color **color_buffer;
     color_buffer = new Color*[number_of_pixels_both_axes];
     for(int i = 0; i < number_of_pixels_both_axes; i++)
@@ -306,6 +315,7 @@ void capture()
     }
 
 
+    int part = number_of_pixels_both_axes / 10;
     for(int i = 0; i < number_of_pixels_both_axes; i++)
     {
         for(int j = 0 ; j < number_of_pixels_both_axes; j ++)
@@ -315,7 +325,15 @@ void capture()
             Ray ray(buffer[i][j], ray_direction);
             color_buffer[i][j] = getRayColor(recursion_level, ray);
         }
+
+        if(i%part == part - 1)
+        {
+            cout << "Rendering " << (i/part + 1)*10 << "% complete" << endl;
+        }
     }
+
+    if (texture == 1)
+        cout << "Rendering image with texture" << endl;
 
     bitmap_image image(number_of_pixels_both_axes, number_of_pixels_both_axes);
 
@@ -327,7 +345,8 @@ void capture()
         }
     }
 
-    image.save_image("ray_tracing.bmp"); 
+    image.save_image("out.bmp"); 
+    cout << "Image Saved " <<endl;
 
     for(int i = 0; i < number_of_pixels_both_axes; i++)
     {
@@ -353,7 +372,7 @@ void keyboardListener(unsigned char key, int x, int y) {
 
     // rotate/look left -> clockwise rotation about u
     case '1':
-		theta = 0.1;
+		theta = .3;
 		l.x = l.x*cos(theta)-r.x*sin(theta);
 		l.y = l.y*cos(theta)-r.y*sin(theta);
 		l.z = l.z*cos(theta)-r.z*sin(theta);
@@ -362,7 +381,7 @@ void keyboardListener(unsigned char key, int x, int y) {
         
     //rotate/look right -> anticlockwise rotation about u
     case '2':
-        theta = -0.1;
+        theta = -0.3;
 		l.x = l.x*cos(theta)-r.x*sin(theta);
 		l.y = l.y*cos(theta)-r.y*sin(theta);
 		l.z = l.z*cos(theta)-r.z*sin(theta);
@@ -371,7 +390,7 @@ void keyboardListener(unsigned char key, int x, int y) {
 
     //look up -> clockwise rotation about r
     case '3':
-        theta = 0.1;
+        theta = 0.3;
 		l.x = l.x*cos(theta)-u.x*sin(theta);
 		l.y = l.y*cos(theta)-u.y*sin(theta);
 		l.z = l.z*cos(theta)-u.z*sin(theta);
@@ -380,7 +399,7 @@ void keyboardListener(unsigned char key, int x, int y) {
     
     //look down -> anticlockwise rotation about r
     case '4':
-        theta = -0.1;
+        theta = -0.3;
 		l.x = l.x*cos(theta)-u.x*sin(theta);
 		l.y = l.y*cos(theta)-u.y*sin(theta);
 		l.z = l.z*cos(theta)-u.z*sin(theta);
@@ -388,7 +407,7 @@ void keyboardListener(unsigned char key, int x, int y) {
 		break;
     //tilt clockwise->anticlockwise rotation about l
     case '5':
-        theta = -0.1;
+        theta = -0.3;
 		u.x = u.x*cos(theta)-r.x*sin(theta);
 		u.y = u.y*cos(theta)-r.y*sin(theta);
 		u.z = u.z*cos(theta)-r.z*sin(theta);
@@ -396,7 +415,7 @@ void keyboardListener(unsigned char key, int x, int y) {
 		break;
     //tilt anticlockwise->clockwise rotation about l
     case '6':
-        theta = 0.1;
+        theta = 0.3;
 		u.x = u.x*cos(theta)-r.x*sin(theta);
 		u.y = u.y*cos(theta)-r.y*sin(theta);
 		u.z = u.z*cos(theta)-r.z*sin(theta);
@@ -406,6 +425,10 @@ void keyboardListener(unsigned char key, int x, int y) {
     //capture
     case '0':
         capture();
+        break;
+
+    case ' ':
+        texture = 1 - texture;
         break;
 
     // Control exit

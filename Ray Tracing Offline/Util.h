@@ -1,9 +1,9 @@
+
+
 //camera 
 int draw_axes = 1;
 // press a or mouse for removing axes
 
-
-Point camera_pos, l, r, u;
 
 // projection 
 double nearplane_distance, farplane_distance, fovY, aspectRatio;
@@ -16,7 +16,7 @@ double checkerboard_width;
 
 //number of objects
 int number_of_objects;
-string object_type;
+
 //sphere
 double sphere_radius;
 
@@ -34,3 +34,4 @@ int number_of_spot_lights;
 
 
 
+// comment out lines 1587-16000 in bitmap_image.hpp

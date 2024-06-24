@@ -3,6 +3,8 @@
 #include <GL/glut.h>
 using namespace std;
 
+int texture = 0;
+
 struct Color
 {
     double r, g, b;
@@ -166,19 +168,17 @@ struct spot_Light
 
 bool isInsideTriangle(Point p0, Point p1, Point p2, Point p) {
     //barycentric coordinates
-    Point edge1 = Substraction(p1, p0);
-    Point edge2 = Substraction(p2, p0);
-    Point edge3 = Substraction(p, p0);
-    double d00 = DotProduct(edge1, edge1);
-    double d01 = DotProduct(edge1, edge2);
-    double d11 = DotProduct(edge2, edge2);
-    double d20 = DotProduct(edge3, edge1);
-    double d21 = DotProduct(edge3, edge2);
-    double denom = d00 * d11 - d01 * d01;
-    double v = (d11 * d20 - d01 * d21) / denom;
-    double w = (d00 * d21 - d01 * d20) / denom;
-    double u = 1.0 - v - w;
-    if(u >= 0 && u <= 1 && v >= 0 && v <= 1 && w >= 0 && w <= 1) {
+    Point side1 = Substraction(p1, p0);
+    Point side2 = Substraction(p2, p0);
+    Point side3 = Substraction(p, p0);
+
+    Point check = CrossProduct(side1, side2);
+    double denominator = DotProduct(check, check);
+    double a = DotProduct(check, CrossProduct(side1, side3)) / denominator;
+    double b = DotProduct(check, CrossProduct(side3, side2)) / denominator;
+    double c = 1 - a - b;
+    if (a >= 0 && a <= 1 && b >= 0 && b <= 1 && c >= 0 && c <= 1)
+    {
         return true;
     }
     return false;
@@ -262,34 +262,39 @@ class Floor_Plane : public Object
 {
     public:
         double floor_width, tile_width;
+        bitmap_image texture_w, texture_b;
         Floor_Plane(double t_width, double f_width)
         {
             this->floor_width = f_width;
             this->tile_width  = t_width;
             this->Reference_point = {-(floor_width / 2) , -(floor_width / 2), 0};
             this->length = t_width;
+            this->texture_w = bitmap_image("./texture_w.bmp");
+            this->texture_b = bitmap_image("./texture_b.bmp");
             
         }
         void draw(){
 
-        int loop = this->floor_width/this->tile_width;
+        if (texture == 0)
+        {
+            int loop = this->floor_width/this->tile_width;
 
-        for(int i=-loop/2;i<=loop/2;i++){
-            for(int j= -loop/2; j <= loop/2; j++ ){
-                if( (i+j)%2 == 0)
-                    glColor3f(0,0,0);
-                else
-                    glColor3f(1,1,1);
-                glBegin(GL_QUADS);{
-                    glVertex3f( i*this->tile_width, j*this->tile_width,0);
-                    glVertex3f( i*this->tile_width,(j+1)*this->tile_width,0);
-                    glVertex3f((i+1)*this->tile_width,(j+1)*this->tile_width,0);
-                    glVertex3f((i+1)*this->tile_width,j*this->tile_width,0);
-
+            for(int i=-loop/2;i<=loop/2;i++){
+                for(int j= -loop/2; j <= loop/2; j++ ){
+                    if( (i+j)%2 == 0)
+                        glColor3f(0,0,0);
+                    else
+                        glColor3f(1,1,1);
+                    glBegin(GL_QUADS);{
+                        glVertex3f( i*this->tile_width, j*this->tile_width,0);
+                        glVertex3f( i*this->tile_width,(j+1)*this->tile_width,0);
+                        glVertex3f((i+1)*this->tile_width,(j+1)*this->tile_width,0);
+                        glVertex3f((i+1)*this->tile_width,j*this->tile_width,0);
+                        }
+                        glEnd();
                     }
-                    glEnd();
-                }
-		    }
+		        }   
+            }
         }
 
         double getIntersectingT(Ray ray)
@@ -303,14 +308,48 @@ class Floor_Plane : public Object
         }
 
         Color getColor(Point intersection_point) {
-            int x = (int)(intersection_point.x / this->tile_width);
-            int y = (int)(intersection_point.y / this->tile_width);
-            if((x + y) % 2 == 0) {
-                return Color(0, 0, 0);
+
+            int rowx = (int)((intersection_point.x - this->Reference_point.x)/ this->tile_width);
+            int rowy = (int)((intersection_point.y - this->Reference_point.y)/ this->tile_width);
+
+            if(texture == 0)
+            {
+                if((rowx+rowy)%2)
+                    return Color(1,1,1); //white
+                else
+                    return Color(0,0,0); //black
             }
-            else {
-                return Color(1, 1, 1);
+
+            double x = (intersection_point.x - this->Reference_point.x ) - this->tile_width * rowx;
+            double y = (intersection_point.y - this->Reference_point.y ) - this->tile_width * rowy;  
+            
+            if ((rowx+rowy)%2 == 0) // Black
+            {
+                int tex_x = (int)(this->texture_b.width() * x) / this->tile_width ;
+                int tex_y = (int)(this->texture_b.height() * y) / this->tile_width;
+
+                tex_x = tex_x % this->texture_b.width();
+                tex_y = tex_y % this->texture_b.height();
+
+                unsigned char r, g, b;
+                this->texture_b.get_pixel(tex_x, tex_y, r, g, b);
+
+                return Color((r / 255.0), (g / 255.0), (b / 255.0));
             }
+            else if ((rowx+rowy)%2 == 1)
+            {
+                int tex_x = (int)(this->texture_w.width() * x) / this->tile_width;
+                int tex_y = (int)(this->texture_w.height() * y) / this->tile_width;
+
+                tex_x = tex_x % this->texture_w.width();
+                tex_y = tex_y % this->texture_w.height();
+
+                unsigned char r, g, b;
+                this->texture_w.get_pixel(tex_x, tex_y, r, g, b);
+                return Color((r / 255.0), (g / 255.0), (b / 255.0));
+            }
+
+            return Color(0, 0, 0);
         }
 
         // 0,0,-1 or 0,0,1
@@ -323,6 +362,7 @@ class Floor_Plane : public Object
                 ret = Point(0, 0, 1);
             }
             return ret;
+           // return Point(0, 0, 1);
         }
 };
 
@@ -719,6 +759,11 @@ class Pyramid : public Object
             }
             else if(isInsideTriangle(bottom4, bottom1, bottom2, intersection_point)) {
                 ret = CrossProduct(Substraction(bottom1, bottom4), Substraction(bottom2, bottom4));
+            }
+            //check angle
+            double angle = acos(DotProduct(ret, to_understand_ray_direction.direction)) * 180 / M_PI;
+            if(angle > 90) {
+                ret = Scalar_Multiplication(-1, ret);
             }
             ret.Normalize();
             return ret;
