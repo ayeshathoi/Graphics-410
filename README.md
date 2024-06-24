@@ -7,15 +7,23 @@
 
 ## ***`Offline1 : OpenGL`*** 
 The project implements the following :
+
+### Offline 
 - Analog Clock
 - Sphere to/ From Octahedron
-  - Video Demonstration : [Youtube Link](https://www.youtube.com/watch?v=nc07fEKwIBI)
 <p align=center">
   <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/openGL%20offline%201/Clock.gif"
   height="400px" width="40%" alt="clock">
   <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/openGL%20offline%201/octahedron.gif"
   height="400px" width="40%" alt="sphere octahedron">
 </p>
+---
+
+### Online
+- Cube motion in a floor (Cube1.gif)
+- Sphere motion in a floor (Sphere1.gif)
+- Half Octahedron (half-oct.gif)
+
 
 ---
 
