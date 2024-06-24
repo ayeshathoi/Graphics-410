@@ -6,6 +6,13 @@ The project implements the following :
 - Analog Clock
 - Sphere to/ From Octahedron
   - Video Demonstration : [Youtube Link](https://www.youtube.com/watch?v=nc07fEKwIBI)
+<p align=center">
+  <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/openGL%20offline%201/Clock.gif"
+  height="400px" width="40%" alt="clock">
+  <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/openGL%20offline%201/octahedron.gif"
+  height="400px" width="40%" alt="sphere octahedron">
+</p>
+
 
 # `Offline2`
 Implementation of Raster based graphics pipeline.
@@ -15,8 +22,10 @@ Implementation of Raster based graphics pipeline.
 - `Stage 4:` clipping & scan conversion using Z-buffer algorithm
 
 A demo of the input can be found in `Test Cases` folder. There are 5 testcases, from which one of the output is given below <br/>
-![alt text](https://github.com/ayeshathoi/Graphics-410/blob/main/Rasterization/Test%20Cases%20(Updated%202%20Aug)/3/out.bmp)
-
+<p align=center">
+  <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Rasterization/Test%20Cases%20(Updated%202%20Aug)/3/out.bmp"
+  height="400px" width="40%" alt="rasterization">
+</p>
 
 
 ## **`Implementation-of-Ray-Tracing`**
@@ -32,12 +41,10 @@ This project implements the following :
 ---
 <p align=center">
 <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/without_tex.bmp" 
-  height="220px" width="40%" alt="with Texture"/>
-</p>
-<hr/>
-<p align="center">
+  height="400px" width="40%" alt="with Texture"/>
+
 <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/withtex.bmp" 
-  height="220px" width="40%" alt="without Texture"/>
+  height="400px" width="40%" alt="without Texture"/>
 </p>
 
 ### Language & Library Used
