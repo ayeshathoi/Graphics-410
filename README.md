@@ -11,7 +11,7 @@ The project implements the following :
 ### Offline 
 - Analog Clock
 - Sphere to/ From Octahedron
-<p align=center">
+<p align="center">
   <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/openGL%20offline%201/Clock.gif"
   height="400px" width="40%" alt="clock">
   <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/openGL%20offline%201/octahedron.gif"
@@ -24,7 +24,7 @@ The project implements the following :
 - Sphere motion in a floor 
 - Half Octahedron
 
-<p align=center">
+<p align="center">
   <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/online1/cube1.gif"
   height="400px" width="40%" alt="clock">
   <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/online1/sphere1.gif"
@@ -41,7 +41,7 @@ Implementation of Raster based graphics pipeline.
 - `Stage 4:` clipping & scan conversion using Z-buffer algorithm
 
 A demo of the input can be found in `Test Cases` folder. There are 5 testcases, from which one of the output is given below <br/>
-<p align=center">
+<p align="center">
   <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Rasterization/Test%20Cases%20(Updated%202%20Aug)/3/out.bmp"
   height="400px" width="40%" alt="rasterization">
 </p>
@@ -60,7 +60,7 @@ This project implements the following :
 - **Recursive Reflection** : reflection is computed recursively for an object according to the variable `recursion_level`.
 - **Snapshot** : A snapshot can be taken pressing "0" button
 - **Texture** : Texture can be added in the floor pressing "space" button. Otherwise, floor will be without texture in the snapshot.
-<p align=center">
+<p align="center">
 <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/withtex.bmp"/>
 </p>
 
