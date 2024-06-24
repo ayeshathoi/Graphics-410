@@ -1,7 +1,7 @@
 # **`Computer-Graphics`**
 
 
-### ***OpenGL Offline*** 
+## ***`Offline1 : OpenGL`*** 
 The project implements the following :
 - Analog Clock
 - Sphere to/ From Octahedron
@@ -13,8 +13,9 @@ The project implements the following :
   height="400px" width="40%" alt="sphere octahedron">
 </p>
 
+---
 
-# `Offline2`
+## **`Offline2 : Raster based pipeline`**
 Implementation of Raster based graphics pipeline.
 - `Stage 1:` modeling transformation
 - `Stage 2:` view transformation
@@ -27,6 +28,7 @@ A demo of the input can be found in `Test Cases` folder. There are 5 testcases, 
   height="400px" width="40%" alt="rasterization">
 </p>
 
+---
 
 ## **`Implementation-of-Ray-Tracing`**
 
@@ -39,13 +41,18 @@ This project implements the following :
 - **Texture** : Texture can be added in the floor pressing "space" button. Otherwise, floor will be without texture in the snapshot.
 
 ---
-<p align=center">
-<img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/without_tex.bmp" 
-  height="400px" width="40%" alt="with Texture">
+<div class="container">
+        <div class="image">
+            <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/without_tex.bmp" 
+                 height="400px" width="40%" alt="without Texture">
+        </div>
+        <div class="image">
+            <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/withtex.bmp" 
+                 height="400px" width="40%" alt="with Texture">
+        </div>
+</div>
 
-<img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/withtex.bmp" 
-  height="400px" width="40%" alt="without Texture">
-</p>
+---
 
 ### Language & Library Used
 - `CPP`, `OpenGL`
