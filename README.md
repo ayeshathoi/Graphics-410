@@ -41,14 +41,15 @@ This project implements the following :
 - **Texture** : Texture can be added in the floor pressing "space" button. Otherwise, floor will be without texture in the snapshot.
 
 ---
-<div class="container">
+<div align="center>
         <div class="image">
             <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/without_tex.bmp" 
-                 height="400px" width="20%" alt="without Texture">
+                 height="400px" width="60%" alt="without Texture">
         </div>
+        <hr/>
         <div class="image">
             <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/withtex.bmp" 
-                 height="400px" width="20%" alt="with Texture">
+                 height="400px" width="60%" alt="with Texture">
         </div>
 </div>
 
