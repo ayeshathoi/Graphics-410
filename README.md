@@ -61,7 +61,7 @@ This project implements the following :
 - **Snapshot** : A snapshot can be taken pressing "0" button
 - **Texture** : Texture can be added in the floor pressing "space" button. Otherwise, floor will be without texture in the snapshot.
 <p align="center">
-<img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/withtex.bmp" height="600px" width="40%" alt="ray tracing" />
+<img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/withtex.bmp" height="50%" width="50%" alt="ray tracing" />
 </p>
 
 
