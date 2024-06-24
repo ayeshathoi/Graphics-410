@@ -20,9 +20,9 @@ The project implements the following :
 
 
 ### Online
-- Cube motion in a floor (Cube1.gif)
-- Sphere motion in a floor (Sphere1.gif)
-- Half Octahedron (half-oct.gif)
+- Cube motion in a floor 
+- Sphere motion in a floor 
+- Half Octahedron
 
 <p align=center">
   <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/online1/cube1.gif"
