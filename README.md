@@ -41,10 +41,10 @@ This project implements the following :
 ---
 <p align=center">
 <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/without_tex.bmp" 
-  height="400px" width="40%" alt="with Texture"/>
+  height="400px" width="40%" alt="with Texture">
 
 <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Ray%20Tracing%20Offline/withtex.bmp" 
-  height="400px" width="40%" alt="without Texture"/>
+  height="400px" width="40%" alt="without Texture">
 </p>
 
 ### Language & Library Used
