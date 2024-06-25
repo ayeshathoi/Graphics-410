@@ -34,18 +34,20 @@ The project implements the following :
 ---
 
 ## **`Offline2 : Raster based Graphics pipeline`**
+
+<p align="center">
+  <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Rasterization/Test%20Cases%20(Updated%202%20Aug)/3/out.bmp"
+  height="400px" width="40%" alt="rasterization">
+</p>
+---
+
 Implementation of Raster based graphics pipeline.
 - `Stage 1:` modeling transformation
 - `Stage 2:` view transformation
 - `Stage 3:` projection transformation
 - `Stage 4:` clipping & scan conversion using Z-buffer algorithm
 
-A demo of the input can be found in `Test Cases` folder. There are 5 testcases, from which one of the output is given below <br/>
-<p align="center">
-  <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Rasterization/Test%20Cases%20(Updated%202%20Aug)/3/out.bmp"
-  height="400px" width="40%" alt="rasterization">
-</p>
-
+A demo of the input can be found in `Test Cases` folder. There are 5 testcases, from which one of the output is given above. <br/>
 ---
 
 ## **`Offline3 : Implementation-of-Ray-Tracing`**
