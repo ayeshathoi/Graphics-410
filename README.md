@@ -6,11 +6,7 @@
 ---
 
 ## ***`Offline1 : OpenGL`*** 
-The project implements the following :
 
-### Offline 
-- Analog Clock
-- Sphere to/ From Octahedron
 <p align="center">
   <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/openGL%20offline%201/Clock.gif"
   height="400px" width="40%" alt="clock">
@@ -18,11 +14,14 @@ The project implements the following :
   height="400px" width="40%" alt="sphere octahedron">
 </p>
 
+---
 
-### Online
-- Cube motion in a floor 
-- Sphere motion in a floor 
-- Half Octahedron
+
+### Offline 
+- Analog Clock
+- Sphere to/ From Octahedron
+
+---
 
 <p align="center">
   <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/openGL/online1/cube1.gif"
@@ -33,12 +32,21 @@ The project implements the following :
 
 ---
 
+### Online
+- Cube motion in a floor 
+- Sphere motion in a floor 
+- Half Octahedron
+
+
+---
+
 ## **`Offline2 : Raster based Graphics pipeline`**
 
 <p align="center">
   <img src="https://github.com/ayeshathoi/Graphics-410/blob/main/Rasterization/Test%20Cases%20(Updated%202%20Aug)/3/out.bmp"
   height="400px" width="40%" alt="rasterization">
 </p>
+
 ---
 
 Implementation of Raster based graphics pipeline.
