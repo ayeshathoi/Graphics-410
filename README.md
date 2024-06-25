@@ -56,6 +56,8 @@ Implementation of Raster based graphics pipeline.
 - `Stage 4:` clipping & scan conversion using Z-buffer algorithm
 
 A demo of the input can be found in `Test Cases` folder. There are 5 testcases, from which one of the output is given above. <br/>
+
+
 ---
 
 ## **`Offline3 : Implementation-of-Ray-Tracing`**
